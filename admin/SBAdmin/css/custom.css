@@ -1,132 +1,81 @@
-:root {
-    --primary-color: #b999f3;
-    --accent-color: #f48bbc;
-    --baby-blue: #89CFF0;
-    --gray-neutral: #858796;
-}
-
-/* Sidebar background */
 .sidebar {
-    background-color: var(--primary-color) !important;
-.sidebar {
-    border-right: 1px solid rgba(255,255,255,0.2) !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;              /* full screen height */
+    overflow-y: auto;           /* scroll if too long */
+    width: 220px !important;    /* slimmer width */
+    z-index: 1000;              /* stays above content */
+    background: linear-gradient(180deg, #f9d7e3, #fceef5); /* pastel pink gradient */
+    font-family: 'Nunito', sans-serif; /* clean font */
+    font-weight: 700;           /* bold text */
 }
 
 .sidebar .nav-link {
-    padding: 12px 20px !important;
-    border-radius: 8px !important;
-    margin: 4px 0 !important;
+    font-weight: 700;                 /* bold links */
+    color: #a64d79 !important;        /* deep rose text */
+    padding: 12px 18px !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-/* Background */
-body {
-    background-color: #f7f7f9 !important;
+.sidebar .nav-link:hover {
+    background: #fceef5 !important;   /* soft pink hover */
+    color: #6a1e55 !important;        /* darker accent */
 }
 
+
+#content-wrapper {
+    margin-left: 220px !important; /* match sidebar width */
 }
 
-/* Sidebar active link */
-.nav-item.active .nav-link,
-.nav-item .nav-link:hover {
-    background-color: var(--baby-blue) !important;
-    color: #fff !important;
+
+/* Center the main content beside the sidebar */
+.container-fluid {
+    max-width: 900px;          /* limit width for balance */
+    margin: 0 auto;            /* center horizontally */
+    padding: 20px;             /* breathing space */
 }
 
-/* Card headers */
-.card-header {
-    background-color: var(--primary-color) !important;
-    color: #fff !important;
-   
+/* Optional: make dashboard wrapper stand out */
+.dashboard-wrapper {
+    background: #ffe6f0;       /* pastel blush */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 6px 14px rgba(255,182,193,0.3);
+}
+
+
 .card {
-    border-radius: 12px !important;
-    border: 1px solid #e0e0e0 !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    border-radius: 16px !important;
+    border: 1px solid #f7c6d0 !important;
+    background: #fff0f6 !important;
+    box-shadow: 0 4px 12px rgba(255,182,193,0.25) !important;
+}
+.card-header {
+    background: #f9d7e3 !important;
+    font-family: 'Cursive', sans-serif; /* playful font */
+    color: #a64d79 !important;
 }
 
-/* Topbar */
+
 .topbar {
-    border-bottom: 1px solid #e0e0e0 !important;
-}
-
-.topbar .nav-link {
-    padding: 10px 16px !important;
-    border-radius: 8px !important;
-}
-
-/* Modern topbar design */
-.topbar {
-    background: #ffffff !important;
-    border-bottom: 1px solid #e0e0e0 !important;
+    background: #fffafc !important;
+    border-bottom: 2px dashed #f7c6d0 !important; /* cute dashed line */
     padding: 12px 20px !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
-}
-
-/* Center the topbar content */
-.topbar .navbar-nav {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-/* Optional: Add a title in the topbar */
-.topbar-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(255,182,193,0.2) !important;
 }
 
 
+body {
+    font-family: 'Playfair Display', serif; /* elegant serif */
+    font-weight: 600;                       /* semi-bold */
+    background-color: #fff0f6 !important;   /* pastel background */
 }
 
-/* Buttons */
-.btn-primary {
-    background-color: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
-}
 
-.btn {
-    border-radius: 10px !important;
-    padding: 10px 18px !important;
-    font-weight: 600 !important;
-}
-
-.btn-info {
-    background-color: var(--baby-blue) !important;
-    border-color: var(--baby-blue) !important;
-}
-
-/* Page headings */
-h1, h2, h3, h4 {
-    color: var(--primary-color) !important;
-    /* Heading improvements */
-h1, h2, h3, h4 {
-    font-weight: 700 !important;
-    letter-spacing: 0.5px !important;
-}
-
-}
-
-/* Page spacing */
-.container-fluid {
-    padding-top: 20px !important;
-}
-
-/* Content wrapper */
-#content {
-    padding: 20px !important;
-}
-
-/* Center the content area */
-.container-fluid {
-    max-width: 900px !important;
-    margin: 0 auto !important;
-}
-
-/* Add a white content box */
-#content {
-    background: #f3d0e6 !important;
-    padding: 30px !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-    margin: 20px auto !important;
-    max-width: 900px !important;
+.nav-link:hover {
+    background: #fceef5;
+    color: #a64d79;
+    border-radius: 12px;
 }

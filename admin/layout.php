@@ -36,7 +36,7 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
+            <!-- Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-book"></i>
@@ -44,35 +44,41 @@
                 <div class="sidebar-brand-text mx-3">Library System</div>
             </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+            <hr class="sidebar-divider">
 
-            <!-- Nav Item - Search Books -->
+            <!-- Book Management -->
+            <li class="nav-item">
+                <a class="nav-link" href="book_management_dashboard.php">
+                    <span>Book Management</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <!-- Records -->
+            <li class="nav-item">
+                <a class="nav-link" href="records_dashboard.php">
+                    <span>Records</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <!-- Search -->
             <li class="nav-item">
                 <a class="nav-link" href="search_books.php">
-                    <i class="fas fa-search"></i>
-                    <span>Search Books</span>
+                    <span>Search</span>
                 </a>
             </li>
 
-            <!-- Nav Item - Add Book -->
+            <hr class="sidebar-divider">
+
+            <!-- Student History -->
             <li class="nav-item">
-                <a class="nav-link" href="add_book.php">
-                    <i class="fas fa-plus-circle"></i>
-                    <span>Add Book</span>
+                <a class="nav-link" href="student_history_dashboard.php">
+                    <span>Student History</span>
                 </a>
             </li>
-
-            <!-- Nav Item - Borrow Book -->
-            <li class="nav-item">
-                <a class="nav-link" href="borrow.php">
-                    <i class="fas fa-book"></i>
-                    <span>Borrow Book</span>
-                </a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
         </ul>
         <!-- End of Sidebar -->
@@ -85,14 +91,12 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <?php
-                    // This loads the page content (e.g., search_books_content.php)
                     if (isset($content)) {
                         include($content);
                     }
