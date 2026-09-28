@@ -16,13 +16,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $stmt = $conn->prepare($sql);
 
-    // "ssssss" = anim (6) na values, lahat strings
+    if (!$stmt) {
+        die("SQL prepare failed: " . $conn->error);
+    }
+
     $stmt->bind_param("ssssss", $student_number, $last_name, $first_name, $middle_initial, $book_title, $reservation_date);
 
     if ($stmt->execute()) {
         header("Location: reserve.php?status=success");
     } else {
-        header("Location: reserve.php?status=error");
+        die("Execute failed: " . $stmt->error);
     }
 
     $stmt->close();
