@@ -48,7 +48,7 @@
 
             <!-- Book Management -->
             <li class="nav-item">
-                <a class="nav-link" href="book_management_dashboard.php">
+                <a class="nav-link" href="add_book_content.php">
                     <span>Book Management</span>
                 </a>
             </li>

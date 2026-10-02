@@ -2,6 +2,32 @@
 include('../includes/db.php');
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Books</title>
+    <style>
+        table.table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table.table th, table.table td {
+            padding: 12px;          /* spacing inside cells */
+            text-align: left;       /* align text left */
+            border: 1px solid #ddd; /* light borders */
+        }
+        table.table th {
+            background-color: #f8f9fc; /* header background */
+            font-weight: bold;
+        }
+        table.table tr:nth-child(even) {
+            background-color: #f2f2f2; /* zebra striping */
+        }
+    </style>
+</head>
+<body>
+
 <!-- Page Heading -->
 <h1 class="h3 mb-4 text-gray-800">Search Books</h1>
 
@@ -71,19 +97,18 @@ include('../includes/db.php');
             $result = mysqli_query($conn, $sql);
 
             echo "<h4 class='mt-4'>Results</h4>";
+            echo "<div class='table-responsive'>";
+            echo "<table class='table table-bordered table-striped table-hover'>";
+            echo "<thead><tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Year</th>
+                    <th>Category</th>
+                    <th>Copies</th>
+                  </tr></thead><tbody>";
 
             if(mysqli_num_rows($result) > 0){
-                echo "<div class='table-responsive'>";
-                echo "<table class='table table-bordered'>";
-                echo "<thead><tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Publisher</th>
-                        <th>Year</th>
-                        <th>Category</th>
-                        <th>Copies</th>
-                      </tr></thead><tbody>";
-
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<tr>";
                     echo "<td>".$row['title']."</td>";
@@ -94,13 +119,16 @@ include('../includes/db.php');
                     echo "<td>".$row['copies']."</td>";
                     echo "</tr>";
                 }
-
-                echo "</tbody></table>";
-                echo "</div>";
             } else {
-                echo "<div class='alert alert-warning'>No books found.</div>";
+                echo "<tr><td colspan='6' class='text-center text-muted'>No books found</td></tr>";
             }
+
+            echo "</tbody></table>";
+            echo "</div>";
         }
         ?>
     </div>
 </div>
+
+</body>
+</html>

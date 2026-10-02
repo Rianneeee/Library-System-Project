@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "cpe_tb1";
+$dbname = "book_management";
 
 // Connect to database
 $conn = mysqli_connect($servername, $username, $password, $dbname);
